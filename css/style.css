@@ -1,0 +1,237 @@
+
+
+body
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+
+.warplove {
+  width: 100%;
+  height: 100%;
+  background:black;
+
+}
+.love {
+  padding-top: 50%;
+  color:#EA80B0;
+  font-size: 7rem; 
+  text-align: center;
+}
+
+.btn
+{
+  border: none;
+  width:10rem;
+  background-color: rgba(25,130,239,0.1);
+  font-family:sans-serif;
+  font-size: 1.8rem;
+  color: #ECEAEA;
+  float: right;
+  position: relative;
+  border-radius:0.5rem;
+}
+
+.button-cell
+{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+#score-cell
+{
+  color: #fff;
+  width: 8rem;
+  height: 7rem;
+  padding: 1rem;
+  background-color: #1982ef;
+  position: absolute;
+  margin-left: 3rem;
+  margin-top: 5rem;
+  border-radius: 1rem;
+}
+
+#best-cell
+{
+  color: #fff;
+  width: 8rem;
+  height: 7rem;
+  padding: 1rem;
+  margin: 0.2rem auto;
+  background-color: #1982ef;
+  position: absolute;
+  margin-left: 14rem;
+  margin-top: 5rem;
+  border-radius: 1rem;
+}
+
+
+.restart-cell
+{
+  width: 8rem;
+  height: 7rem;
+  padding: 1rem;
+  margin: 0.2rem auto;
+  background-color: #1982ef;
+  position: absolute;
+  margin-left: 25rem;
+  margin-top: 5rem;
+  border-radius: 1rem;
+   -webkit-transition: background-color 1s;
+}
+
+
+.text-cell
+{
+  color: rgba(255,255,255,0.8);
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  position: relative;
+}
+
+
+#grid-container
+{
+  padding:5rem;
+  margin:0.5rem auto;
+  top: 15rem;
+  background-color:rgba(139,185,202,0.5);
+  border-radius:1rem;
+  position:relative;
+}
+.grid-cell
+{
+  border-radius:1rem;
+  background-color:rgba(147,201,235,0.5);  
+  position:absolute;
+}
+.number-cell
+{
+  border-radius:0.5rem;
+  font-family:Arial;
+  font-weight:bold;
+  font-size:6rem;
+  line-height:10rem;
+  text-align:center;
+  position:absolute;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.arrow {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px;
+}
+.arrow:before, .arrow:after {
+  content: '';
+  border-color: transparent;
+  border-style: solid;
+  position: absolute;
+}
+.arrow .curve {
+  position: absolute;
+  overflow: hidden;
+}
+.arrow .curve:before {
+  content: '';
+  position: absolute;
+}
+
+
+
+
+
+
+
+.arrow-animate {
+  transform: rotate(45deg) scale(0.5);
+  margin-left: -4.5rem;
+  margin-top: -5rem;
+  height: 17rem;
+  width: 17rem;
+}
+.arrow-animate .arrow-item {
+  width: 17rem;
+  height: 8.5rem;
+  position: absolute;
+}
+.arrow-animate .arrow-item:before {
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 3rem solid transparent;
+}
+.arrow-animate .arrow-item .curve {
+  height: 7rem;
+  width: 17rem;
+}
+.arrow-animate .arrow-item .curve:before {
+  -moz-border-radius: 200rem;
+  -webkit-border-radius: 200rem;
+  border-radius: 200rem;
+  border: 1.7rem solid #abf1f7;
+  height: 9rem;
+  width: 9rem;
+  left: 1.9rem;
+}
+.arrow-animate .arrow-item:first-child {
+  top: 0;
+  left: 0;
+}
+.arrow-animate .arrow-item:first-child:before {
+  border-top-color: #abf1f7;
+  bottom: -3rem;
+}
+.arrow-animate .arrow-item:first-child .curve {
+  top: 0;
+  left: 0;
+}
+.arrow-animate .arrow-item:first-child .curve:before {
+  top: 1.9rem;
+}
+.arrow-animate .arrow-item:last-child {
+  top: 8.5rem;
+  left: 0;
+}
+.arrow-animate .arrow-item:last-child:before {
+  border-bottom-color: #abf1f7;
+  top: -3.4rem;
+  right: 0;
+}
+.arrow-animate .arrow-item:last-child .curve {
+  bottom: 0;
+  left: 0;
+}
+.arrow-animate .arrow-item:last-child .curve:before {
+  bottom: 1.9rem;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
