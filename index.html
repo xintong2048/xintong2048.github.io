@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+    <meta charset="utf-8"/>
+    <title>Xin Tong 2048 </title>
+    <link rel="stylesheet" type ="text/css" href="css/style.css" />
+    <link rel="stylesheet" type ="text/css" href="css/loading.css" />
 
+</head>
 <body>
+
+<div class="warplove" style="display:none">
+<div class="love"> I LOVE U</div>
+</div>
+
+<div class="header">
+
+    <div id="restart-flag" class = "restart-cell" onclick="easterEggDetector('restart');init();generateOneNumber(); generateOneNumber()">
+        <span class="arrow arrow-animate"  id="restart-flag">
+          <span class="arrow-item"  id="restart-flag"><span class="curve"  id="restart-flag"></span></span>
+          <i></i>
+          <span class="arrow-item"  id="restart-flag" ><span class="curve"  id="restart-flag"></span></span>
+        </span>
+    </div>
+    <div id="score-cell">
+		<div class="text-cell">SCORE</div>
+		<div class="button-cell"><span id="score">0</span></div>      
+    </div>
+    <div id="best-cell">
+        <div class="text-cell">BEST</div>
+        <div class="button-cell"><span id="best">0</span></div>      
+    </div>
+
+</div>
+
+<div id="grid-container">
+    <div class="grid-cell" id="grid-cell-0-0"></div>
+    <div class="grid-cell" id="grid-cell-0-1"></div>
+    <div class="grid-cell" id="grid-cell-0-2"></div>
+    <div class="grid-cell" id="grid-cell-0-3"></div>
+
+    <div class="grid-cell" id="grid-cell-1-0"></div>
+    <div class="grid-cell" id="grid-cell-1-1"></div>
+    <div class="grid-cell" id="grid-cell-1-2"></div>
+    <div class="grid-cell" id="grid-cell-1-3"></div>
+
+    <div class="grid-cell" id="grid-cell-2-0"></div>
+    <div class="grid-cell" id="grid-cell-2-1"></div>
+    <div class="grid-cell" id="grid-cell-2-2"></div>
+    <div class="grid-cell" id="grid-cell-2-3"></div>
+
+    <div class="grid-cell" id="grid-cell-3-0"></div>
+    <div class="grid-cell" id="grid-cell-3-1"></div>
+    <div class="grid-cell" id="grid-cell-3-2"></div>
+    <div class="grid-cell" id="grid-cell-3-3"></div>
+</div>
+
+
+
+
+<div class="loading" style="visibility: hidden;">
+  <svg class="loader" viewBox="0 0 100 100" overflow="visible">
+    <g class="core">
+      <circle class="path" cx="50" cy="50" r="1" fill="none" />
+    </g>
+    <g class="spinner">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" />
+    </g>
+    <g class="layer-1">
+      <circle class="path" cx="50" cy="50" r="70" fill="none" />
+    </g>
+    <g class="layer-2">
+      <circle class="path" cx="50" cy="50" r="120" fill="none" />
+    </g>
+    <g class="layer-3">
+      <circle class="path" cx="50" cy="50" r="180" fill="none" />
+    </g>
+    <g class="layer-4">
+      <circle class="path" cx="50" cy="50" r="240" fill="none" />
+    </g>
+    <g class="layer-5">
+      <circle class="path" cx="50" cy="50" r="300" fill="none" />
+    </g>
+    <g class="layer-6">
+      <circle class="path" cx="50" cy="50" r="380" fill="none" />
+    </g>
+    <g class="layer-7">
+      <circle class="path" cx="50" cy="50" r="450" fill="none" />
+    </g>
+    <g class="layer-8">
+      <circle class="path" cx="50" cy="50" r="540" fill="none" />
+    </g>
+  </svg>
+</div>
+
+<div class="uglyPreloading" style="visibility: hidden;height: 0px;width: 0px; overflow: hidden">
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery-latest.js"></script>
+<script type="text/javascript" src="js/support.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
+
+
 </html>
