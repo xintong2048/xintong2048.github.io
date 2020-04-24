@@ -33,12 +33,9 @@ function getNumberBackgroundColor(number){
     return "black";
 }
 
-function getNumberDisplayImage(number){
+function getNumberDisplayImage(number) {
 
-    if (number == 512) {
-        return 'url(img/2.png)'
-    }
-    return number <= 256 ? 'url(img/' + number + '.png)' : false;
+    return number <= 512 ? 'url(img/' + number + '.png)' : false;
 }
 
 

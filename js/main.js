@@ -13,6 +13,7 @@ var easterEgg = ['up','up','down','down','left','right','left','right','restart'
 
 var love = false;
 
+
 var instructSequence = [];
 $(document).ready(function () {
     prepareForMobile();
@@ -79,8 +80,8 @@ function easterEggDetector (instrct) {
   }
   if ((easterEgg.length - 1) == instructSequence.length
       && easterEgg[instructSequence.length] == 'restart'){
-    $('.restart-cell').css('background-color','#ff0b00');
     loveu();
+    instructSequence = []
   }
 
 } 
@@ -90,6 +91,12 @@ function loveu() {
     love = true;
     $('body').css('background-color','black');
     $('.warplove').css('display','block');
+}
+
+function loveleave() {
+    love = false;
+    $('body').css('background-color','white');
+    $('.warplove').css('display','none');
 }
 
 function init(){
@@ -120,7 +127,7 @@ function init(){
 function uglyPreloading () {
   let innerHTML = '';
 
-  for (i = 1; i <= 8; i++) {
+  for (i = 1; i <= 9; i++) {
     let number = Math.pow(2, i)
     innerHTML += `<div style="background-image: url('img/${number}.png')"></div>`
   }
@@ -288,26 +295,16 @@ $(document).keydown((event) => {
 
 document.addEventListener('touchstart',function(event){
 
-    if (love)
-        return
     if (event.cancelable) {
         if (!event.defaultPrevented) {
             event.preventDefault();
         }
     }
     if (event.target.id == 'restart-flag') {
-      easterEggDetector('restart');
       init();
       generateOneNumber();
       generateOneNumber()
     }
-
-
-    // for (let i in event.path) {
-    //     if(event.path[i].id == 'restart-cell') {
-
-    //     }
-    // }
 
     startx=event.touches[0].pageX;
     starty=event.touches[0].pageY;
@@ -317,8 +314,6 @@ document.addEventListener('touchstart',function(event){
 
 document.addEventListener('touchend',function(event){
 
-    if (love)
-        return
 
     if (event.cancelable ) {
         if (!event.defaultPrevented) {
@@ -336,6 +331,15 @@ document.addEventListener('touchend',function(event){
         return ;
     }
 
+    if(Math.abs(deltay) > 1 * documentWidth && love == true) {
+        loveleave()
+        return
+    }
+    if (love) {
+        return
+    }
+
+
     if(Math.abs(deltax)>Math.abs(deltay)){
         if(deltax>0){
           easterEggDetector('right');
@@ -352,7 +356,6 @@ document.addEventListener('touchend',function(event){
             if(moveLeft()){
                 setTimeout(() => {
                     if(generateOneNumber()) {
-                        //audioPlay();
                     }
                 },210);
                 setTimeout("isgameover()",300);
@@ -365,7 +368,6 @@ document.addEventListener('touchend',function(event){
             if(moveDown()){
                 setTimeout(() => {
                     if(generateOneNumber()) {
-                       // audioPlay();
                     }
                 },210);
                 setTimeout("isgameover()",300);
@@ -376,7 +378,6 @@ document.addEventListener('touchend',function(event){
             if(moveUp()){
                 setTimeout(() => {
                     if(generateOneNumber()) {
-                       // audioPlay();
                     }
                 },210);
                 setTimeout("isgameover()",300);
